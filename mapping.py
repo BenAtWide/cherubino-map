@@ -1,10 +1,11 @@
-from polyline.codec import PolylineCodec
+import polyline
 import urllib.parse
 
 """
 Turn a bunch of lat longs in to a usable mapbox url with an encoded polyline
 https://docs.mapbox.com/api/legacy/static-classic/
 This is so we can embed the map in a Wordpress blog.
+https://pypi.org/project/polyline/
 """
 latlngs = [
     (28.92, -13.66),
@@ -29,8 +30,10 @@ latlngs = [
     (15.88, -61.32),
     (15.97, -61.32),
     (15.87, -61.58),
+    (15.98, -61.72),
+    (16.30, -61.78),
 ]
-path = PolylineCodec().encode(latlngs)
+path = polyline.encode(latlngs)
 encoded = urllib.parse.quote(path)
 url = "https://api.mapbox.com/v4/mapbox.streets/path-3+f44-0.8+f44-0({})/auto/800x500.png?access_token=pk.eyJ1IjoiYmVuZWR3YXJkczEiLCJhIjoiY2pzeGRiemp3MDY4czQ0cW9sZHRlZHNtcCJ9.tHBKpUFYmXVEEjzPB5XRbw".format(
     encoded
