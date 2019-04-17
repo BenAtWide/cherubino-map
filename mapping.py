@@ -1,5 +1,6 @@
 from polyline.codec import PolylineCodec
 import urllib.parse
+
 """
 Turn a bunch of lat longs in to a usable mapbox url with an encoded polyline
 https://docs.mapbox.com/api/legacy/static-classic/
@@ -21,11 +22,19 @@ latlngs = [
     (14.3, -50),
     (14.48, -54.16),
     (14.37, -56.25),
-    (14.25, -59.18)
-    ]
-path=PolylineCodec().encode(latlngs)
+    (14.25, -59.18),
+    (14.47, -60.87),
+    (14.72, -61.17),
+    (15.97, -61.15),
+    (15.88, -61.32),
+    (15.97, -61.32),
+    (15.87, -61.58),
+]
+path = PolylineCodec().encode(latlngs)
 encoded = urllib.parse.quote(path)
-url = "https://api.mapbox.com/v4/mapbox.streets/path-3+f44-0.8+f44-0({})/auto/800x500.png?access_token=pk.eyJ1IjoiYmVuZWR3YXJkczEiLCJhIjoiY2pzeGRiemp3MDY4czQ0cW9sZHRlZHNtcCJ9.tHBKpUFYmXVEEjzPB5XRbw".format(encoded)
+url = "https://api.mapbox.com/v4/mapbox.streets/path-3+f44-0.8+f44-0({})/auto/800x500.png?access_token=pk.eyJ1IjoiYmVuZWR3YXJkczEiLCJhIjoiY2pzeGRiemp3MDY4czQ0cW9sZHRlZHNtcCJ9.tHBKpUFYmXVEEjzPB5XRbw".format(
+    encoded
+)
 print(url)
 """
 
@@ -38,4 +47,3 @@ accessToken: 'pk.eyJ1IjoiYmVuZWR3YXJkczEiLCJhIjoiY2pzeGRiemp3MDY4czQ0cW9sZHRlZHN
 _mooD~}jrA~k{Hnd_Qnz{JnaiI~`}KnldJnhsKnldJ~paF~vpQnkuC~ggN~pdB~zrc@~csS~kl\nm_A~~iZ~dtB~qpL~rN~whL~{B~zaP
 
 """
-
