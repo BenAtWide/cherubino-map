@@ -45,6 +45,8 @@ latlngs = [
     (35.43, -55.50),
     (36.02, -52.30),
     (36.50, -49.00),
+    (37.63, -38.68),
+    (38.12, -35.33),
 ]
 path = polyline.encode(latlngs)
 encoded = urllib.parse.quote(path)
